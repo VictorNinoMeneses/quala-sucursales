@@ -1,4 +1,4 @@
-# 🚀 quala-sucursales
+# 🚀 Quala-sucursales
 
 Prueba Técnica – Desarrollador FullStack para **QUALA**
 
