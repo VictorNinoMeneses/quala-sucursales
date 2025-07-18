@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<button nz-button nzType="primary" (click)="crearSucursal()">Crear Sucursal</button>
+<br /><br />
+
+<nz-table #tabla nzBordered [nzData]="sucursales" [nzFrontPagination]="false">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Dirección</th>
+      <th>Identificación</th>
+      <th>Fecha Creación</th>
+      <th>Moneda</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sucursal of tabla.data">
+      <td>{{ sucursal.codigo }}</td>
+      <td>{{ sucursal.descripcion }}</td>
+      <td>{{ sucursal.direccion }}</td>
+      <td>{{ sucursal.identificacion }}</td>
+      <td>{{ sucursal.fechaCreacion | date }}</td>
+      <td>{{ sucursal.moneda }}</td>
+      <td>
+        <a (click)="editarSucursal(sucursal)">Editar</a>
+        &nbsp;|&nbsp;
+        <a nz-popconfirm nzPopconfirmTitle="¿Eliminar?" (nzOnConfirm)="eliminarSucursal(sucursal.codigo)">Eliminar</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

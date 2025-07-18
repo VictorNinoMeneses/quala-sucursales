@@ -1,0 +1,52 @@
+<form nz-form [formGroup]="form" (ngSubmit)="guardar()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Código</nz-form-label>
+    <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Debe ser un número entero">
+      <input nz-input type="number" formControlName="codigo" />
+    </nz-form-control>
+  </nz-form-item>
+  
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Descripción</nz-form-label>
+    <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Máx. 250 caracteres">
+      <input nz-input formControlName="descripcion" maxlength="250" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Dirección</nz-form-label>
+    <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Máx. 250 caracteres">
+      <input nz-input formControlName="direccion" maxlength="250" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Identificación</nz-form-label>
+    <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Máx. 50 caracteres">
+      <input nz-input formControlName="identificacion" maxlength="50" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Fecha de creación</nz-form-label>
+    <nz-form-control [nzSm]="18" [nzXs]="24">
+      <nz-date-picker formControlName="fechaCreacion" [nzDisabledDate]="deshabilitarFechasAnteriores"></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzRequired>Moneda</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzErrorTip="Seleccione una moneda">
+      <nz-select formControlName="moneda" nzPlaceHolder="Seleccione una moneda">
+        <nz-option *ngFor="let moneda of monedas" [nzValue]="moneda.codigo" [nzLabel]="moneda.nombre"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+<nz-form-item>
+  <nz-form-control [nzSm]="{ span: 18, offset: 6 }">
+    <button nz-button nzType="primary" [disabled]="form.invalid">Guardar</button>
+    <button nz-button nzType="default" type="button" (click)="cancelar()" class="ml-2">Cancelar</button>
+  </nz-form-control>
+</nz-form-item>
+</form> 

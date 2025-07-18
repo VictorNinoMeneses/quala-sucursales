@@ -1,0 +1,17 @@
+<nz-header class="navbar-header">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <img src="assets/logo-quala.png" alt="Logo Quala" />
+    </div>
+
+    <ul nz-menu nzMode="horizontal" nzTheme="dark" class="navbar-menu">
+      <li nz-menu-item routerLink="/sucursales" [class.active]="menuOption === 'sucursales'" (click)="onOption('sucursales')">
+        Sucursales
+      </li>
+    </ul>
+
+    <div class="logout-button-container">
+      <button nz-button nzType="default" nzDanger (click)="logout()">Cerrar sesión</button>
+    </div>
+  </div>
+</nz-header>
