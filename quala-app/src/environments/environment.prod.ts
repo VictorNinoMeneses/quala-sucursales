@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://tu-dominio.com/api/sucursales'
+  apiUrl: 'https://Quala.com/api/sucursales'
 };
